@@ -4,17 +4,15 @@ void main() {
   runApp(MaterialApp(
       title: "Frases do dia",
       home: Container(
-        color: Colors.red,
+        color: Colors.white,
         child: Column(
           children: [
-            Text(
-              "Bem vindo ao Grupo Atan! Somos o maior distribuidor de eletrodomesticos do Nordeste!",
-              style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.white,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.w800),
-            ),
+            FloatingActionButton(
+              onPressed: () {
+                print("Apertou o botão!");
+              },
+              child: Text("Botão"),
+            )
           ],
         ),
       )));

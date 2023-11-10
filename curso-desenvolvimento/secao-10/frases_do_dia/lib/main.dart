@@ -5,18 +5,17 @@ void main() {
       title: "Frases do dia",
       home: Container(
         //color: Colors.white,
-        padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
-        margin: EdgeInsets.all(30),
+        padding: EdgeInsets.only(top: 40),
+        margin: EdgeInsets.all(20),
         decoration: BoxDecoration(
-            border: Border.all(
-                width: 5, color: const Color.fromARGB(255, 255, 0, 0))),
-        child: Column(
+            border:
+                Border.all(width: 5, color: Color.fromARGB(255, 111, 255, 0))),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text("T1"),
-            Padding(
-              padding: EdgeInsets.all(30),
-              child: Text("T2"),
-            ),
+            Text("T2"),
             Text("T3"),
           ],
         ),

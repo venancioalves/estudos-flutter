@@ -10,14 +10,6 @@ void main() {
         decoration: BoxDecoration(
             border:
                 Border.all(width: 5, color: Color.fromARGB(255, 111, 255, 0))),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text("T1"),
-            Text("T2"),
-            Text("T3"),
-          ],
-        ),
+        child: Image.asset('01.jpeg'),
       )));
 }

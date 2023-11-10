@@ -14,41 +14,25 @@ class HomeStateful extends StatefulWidget {
 
 class _HomeStatefulState extends State<HomeStateful> {
   var _titulo = "AtanTec Motivacional";
-  var _texto = "Clique no botão abixo para gerar uma frase!";
+  var _texto = "";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //------------------------------------------------------- APP BAR --------
       appBar: AppBar(
         centerTitle: true,
         title: Text(_titulo),
         backgroundColor: Colors.red[700],
       ),
-
-      //------------------------------------------------------- BODY -----------
       body: Container(
-        padding: EdgeInsets.all(50),
-        alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              'imagem.png',
-              height: 250,
-              width: 250,
-            ),
-            Text(
-              _texto,
-              style: TextStyle(
-                fontSize: 20,
-              ),
-            ),
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  _texto = "Commit na main e justa causa!";
+                  _texto = "Marmininu, tu clicou no botão!";
                 });
               },
               style: ButtonStyle(
@@ -57,11 +41,10 @@ class _HomeStatefulState extends State<HomeStateful> {
               ),
               child: Text("Clique aqui"),
             ),
+            Text(_texto)
           ],
         ),
       ),
-
-      //------------------------------------------------------- BOTTOM ---------
       bottomNavigationBar: BottomAppBar(
         color: Color.fromARGB(255, 255, 255, 255),
         child: Padding(
@@ -73,6 +56,39 @@ class _HomeStatefulState extends State<HomeStateful> {
               Image.asset('buscar.png'),
               Image.asset('pedidos.png'),
               Image.asset('perfil.png'),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var _titulo = "AtanTec Motivacional";
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_titulo),
+        backgroundColor: Colors.red[700],
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(30),
+        child: Text("Conteudo"),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.red[400],
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text("ICON1"),
+              Text("ICON2"),
+              Text("ICON3"),
+              Text("ICON4"),
             ],
           ),
         ),

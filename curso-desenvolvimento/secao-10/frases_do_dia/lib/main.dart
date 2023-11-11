@@ -60,7 +60,7 @@ class _HomeStatefulState extends State<HomeStateful> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              'imagem.png',
+              'assets/imagem.png',
               height: 250,
               width: 250,
             ),
@@ -85,10 +85,10 @@ class _HomeStatefulState extends State<HomeStateful> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset('inicio.png'),
-              Image.asset('buscar.png'),
-              Image.asset('pedidos.png'),
-              Image.asset('perfil.png'),
+              Image.asset('assets/inicio.png'),
+              Image.asset('assets/buscar.png'),
+              Image.asset('assets/pedidos.png'),
+              Image.asset('assets/perfil.png'),
             ],
           ),
         ),

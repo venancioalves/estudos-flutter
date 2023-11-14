@@ -30,9 +30,14 @@ class _JogoState extends State<Jogo> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
-          Image.asset(
-            '../assets/padrao.png',
-            height: 100,
+          GestureDetector(
+            onTap: () {
+              print("Pressionou o botão!");
+            },
+            child: Image.asset(
+              '../assets/padrao.png',
+              height: 100,
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(top: 20, bottom: 10),

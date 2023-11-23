@@ -24,9 +24,22 @@ class _CampoTextoState extends State<CampoTexto> {
             //se quiser desabilitar um campo
             //enabled: true,
 
-            maxLength: 5,
+            //define a quantide de caracteres que terá o campo
+            //maxLength: 5,
+
+            //esconde o valor digitado (para senhas)
+            //obscureText:true
+
+            //para recuperar os valores do obscureText
+            //onChanged: (String e){
+            //  print("valor" + texto)
+            //}
+
+            onSubmitted: (String texto) {
+              print("deu certo");
+            },
           ),
-        )
+        ),
       ]),
       bottomNavigationBar: BottomAppBar(
         color: Color.fromARGB(255, 255, 255, 255),

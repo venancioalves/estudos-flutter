@@ -1,4 +1,5 @@
 import 'package:aula10/one_page.dart';
+import 'package:aula10/two_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnePage(),
+      initialRoute: '/',
+      routes: {'/': (_) => const OnePage(), '/twopage': (_) => const TwoPage()},
     );
   }
 }

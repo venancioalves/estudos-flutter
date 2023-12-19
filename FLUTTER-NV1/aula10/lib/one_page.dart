@@ -10,9 +10,7 @@ class OnePage extends StatelessWidget {
       body: Center(
           child: ElevatedButton(
         onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const TwoPage()),
-          );
+          Navigator.of(context).pushNamed('/twopage', arguments: 'teste');
         },
         child: Text('Ir para segunda tela'),
       )),

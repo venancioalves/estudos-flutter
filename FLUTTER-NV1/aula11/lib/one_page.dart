@@ -9,6 +9,7 @@ class OnePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: CustomButtonWidget(
+          disable: false,
           onPressed: () {},
           title: 'Buttom Personalizado',
         ),

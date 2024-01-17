@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ofertasdomes/widgets/custom_card_widget.dart';
 
 final List<String> imgList = [
   'http://atan.com.br/assets/banner01.jpg',
@@ -30,53 +31,42 @@ class Home extends StatelessWidget {
 
             //-------------------------------------------------------------------------
 
-            Container(
-              padding: EdgeInsets.all(50),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                elevation: 4,
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10),
-                      ),
-                      child: Image.asset(
-                        'assets/01.jpeg',
-                        height: 350,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    ListTile(
-                      title: const Text(
-                        'NOTEBOOK ACER I5 28 RAM 85 SSD TELA 78P',
-                        style: TextStyle(fontSize: 12),
-                      ),
-                      trailing: const Text(
-                        'RS 1.200,99',
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                            backgroundColor: Colors.red,
-                            minimumSize:
-                                Size(MediaQuery.of(context).size.width, 56)),
-                        child: const Text(
-                          'Adicionar ao carrinho',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    )
-                  ],
+            Row(
+              children: [
+                Expanded(flex: 1, child: CustomCardWidget()),
+                Expanded(flex: 1, child: CustomCardWidget()),
+              ],
+            ),
+
+            Wrap(
+              direction: Axis.vertical,
+              children: <Widget>[
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.red,
                 ),
-              ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.green,
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.blue,
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.red,
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.green,
+                ),
+              ],
             )
           ],
         ),

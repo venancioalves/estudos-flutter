@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:projeto01/controllers/login_controller.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginController _controller = LoginController();
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,7 @@ class LoginPage extends StatelessWidget {
                 label: Text('Login'),
                 border: OutlineInputBorder(),
               ),
+              onChanged: _controller.setLogin,
             ),
             SizedBox(
               height: 15,
@@ -31,11 +33,27 @@ class LoginPage extends StatelessWidget {
                 border: OutlineInputBorder(),
               ),
               obscureText: true,
+              onChanged: _controller.setPass,
             ),
             SizedBox(
               height: 40,
             ),
-            ElevatedButton(onPressed: () {}, child: Text('Login'))
+            ValueListenableBuilder<bool>(
+              valueListenable: _controller.inLoader,
+              builder: (_, inLoader, __) => inLoader
+                  ? CircularProgressIndicator()
+                  : ElevatedButton(
+                      onPressed: () {
+                        _controller.auth().then((result) {
+                          if (result) {
+                            print('sucess');
+                          } else {
+                            print('failed');
+                          }
+                        });
+                      },
+                      child: Text('Login')),
+            )
           ],
         ),
       ),
